@@ -1,0 +1,34 @@
+[package]
+name = "cloud-civil-backend"
+version = "0.1.0"
+authors = ["Sankar boro <sankar.boro@yahoo.com>"]
+edition = "2021"
+
+[workspace]
+
+members = [
+	"cc-utils"
+]
+
+[dependencies]
+
+#actix
+actix-web 			= "4.3.1"
+actix-cors 			= "0.6.4"
+actix-service 		= "2.0.2"
+actix-multipart 	= "0.6.0"
+actix-session 		= { version = "0.7.2", features = ["redis-actor-session"] }
+actix-redis 		= "0.12.0"
+anyhow 				= "1.0.33"
+env_logger 			= "0.8"
+clap = { version = "4.3.23" , features = [ "derive", "env" ]}
+time 				= "0.3.20"
+tokio = { version = "1.32.0", features = ["full"] }
+r2d2 = "0.8.10"
+
+# db
+tokio-postgres = "0.7.10"
+deadpool-postgres = "0.10.5"
+
+cc-utils 			= { path = "./cc-utils"}
+
